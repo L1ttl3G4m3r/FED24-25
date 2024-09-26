@@ -9,6 +9,7 @@
   --border-radius: 1em;
   --font-size-heading: 2em;
   --margin: 1em;
+  --width: 100%;
   --max-width: 50%;
   --gap-small: 1em;
   --gap-large: 2em;
@@ -153,24 +154,39 @@ nav ul {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: var(--width);
   height: 0; /* Set back to 0 for animation */
   background-color: var(--color-text);
   overflow: hidden;
   z-index: 999; /* So that videos won't go over the nav */
   transition: 0.3s ease-in-out;
   display: grid;
-  grid-template-rows: repeat(3, auto); /* Allow three rows for links */
+  grid-template-rows: repeat(5, 1fr); /* Allow three rows for links */
+}
+
+#nav1 {
+  grid-row: 2 / 5;
+  grid-column: 1 / 3;
+}
+
+#nav2 {
+  grid-row: 3 / 5;
+  grid-column: 1 / 3;
+}
+
+#nav3 {
+  grid-row: 4 / 5;
+  grid-column: 1 / 3;
 }
 
 nav ul li {
   list-style: none;
+  font-size: 1em;
 }
 
 nav ul a {
   top: 1em;
   color: var(--color-background);
-  font-size: clamp(1.8em, 3vw + 1em, 2.3em);
   text-decoration: none; /* Ensure no underline */
   opacity: 0; /* Start hidden for animation */
 }
@@ -204,7 +220,7 @@ nav ul a::after {
 }
 
 nav ul li a:hover::after {
-  width: 100%;
+  width: var(--width);
   transition: ease 0.5s;
 }
 
@@ -217,7 +233,7 @@ section {
   display: grid;
   gap: var(--gap-large);
   padding: 0 2em;
-  max-width: 100%;
+  max-width: var(--width);
 }
 
 main {
@@ -248,7 +264,7 @@ main button {
 video {
   top: 0;
   left: 0;
-  width: 100%;
+  width: var(--width);
   height: auto;
   border-radius: var(--border-radius);
 }
@@ -266,7 +282,7 @@ article {
   display: flex;
   flex-direction: column;
   gap: var(--gap-small);
-  max-width: 100%;
+  max-width: var(--width);
 }
 
 
@@ -315,7 +331,7 @@ section aside {
 }
 
 .brands-logos img {
-  width: 100%;
+  width: var(--width);
   height: auto;
   display: block;
 }
@@ -327,7 +343,7 @@ section aside {
 .carousel-wrapper {
   position: relative;
   overflow: hidden; /* Hide overflow to ensure no content spills out */
-  width: 100%; /* Full width for responsiveness */
+  width: var(--width); /* Full width for responsiveness */
   max-width: 50em; /* So that the items don't go further then their view on bigger screen */
 }
 
@@ -337,12 +353,12 @@ section aside {
   display: flex;
   padding: 0;
   list-style: none; /* Remove list bullets */
-  width: 100%; /* Ensure ul takes full width */
+  width: var(--width); /* Ensure ul takes full width */
 }
 
 .carousel-list li {
   flex: 0 0 100%; /* Each item takes full width of the carousel view by default */
-  padding: 2em; /* So that the buttons don't overlap the text */
+  padding: var(--padding); /* So that the buttons don't overlap the text */
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -395,7 +411,7 @@ section aside {
   color: var(--color-background); /* White text */
   border-radius: var(--border-radius);
   padding: var(--padding);
-  width: 100%;
+  width: var(--width);
   display: grid;
   grid-template-columns: 1fr; /* Stack header and paragraph vertically by default */
   gap: var(--gap-small);
@@ -403,18 +419,18 @@ section aside {
 
 .awards-text {
   text-align: left;
-  padding: 2em;
+  padding: var(--padding);
 }
 
 .awards-images {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 images per row */
   gap: var(--gap-small);
-  padding: 2em;
+  padding: var(--padding);
 }
 
 .awards-images img {
-  width: 100%;
+  width: var(--width);
 }
 
 
@@ -433,7 +449,7 @@ ol li {
 
 /* General styles for images and text */
 ol li img {
-  width: 100%; /* Make the image take up the full width of the list item */
+  width: var(--width); /* Make the image take up the full width of the list item */
   height: auto; /* Maintain aspect ratio */
 }
 
@@ -449,8 +465,8 @@ ol li p {
 .container-button {
   display: grid;
   place-items: center;
-  width: 100%;
-  max-width: 100%; /* Prevents button from going wider then container */
+  width: var(--width);
+  max-width: var(--width); /* Prevents button from going wider then container */
   box-sizing: border-box;
 }
 
@@ -458,8 +474,8 @@ ol li p {
 .container-button > button {
   height: 4em;
   border-radius: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -476,7 +492,7 @@ ol li p {
 /***************/
 /* Ensure video takes full width of its container */
 .stacked-items li video {
-  width: 100%;
+  width: var(--width);
   height: auto;
 }
 
@@ -531,7 +547,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr auto; /* Left column for copyright, right for social media */
   align-items: end;
-  max-width: 100%;
+  max-width: var(--width);
 }
 
 /* Social media links */
@@ -553,7 +569,7 @@ footer ul svg {
 /* EXTRA FOR WORKPAGE */
 /**********************/
 img {
-  width: 100%;
+  width: var(--width);
 }
 
 /* Apply border-radius to all but the first child image and video */
@@ -663,7 +679,7 @@ video:not(:first-child),
 
   .industries ol {
     display: flex;
-    width: 100%;
+    width: var(--width);
   }
 
   .industries ol li {
