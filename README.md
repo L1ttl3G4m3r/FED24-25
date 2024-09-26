@@ -203,7 +203,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details>
   <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
 
-  Ik heb een test gedaan op 25-09-2024. Dit heb ik gedaan voor de homepagina. De workpagina was namelijk nog niet af. Wel weet ik dat als de homepagina goed functioneert volgens de screenreader zal de workpagina ook goed werken aangezien ik deze op dezelfde manier zal coderen.
+  Ik heb een test gedaan op 25-09-2024. Dit heb ik gedaan voor de homepagina. De workpagina was namelijk nog niet af. Wel weet ik dat als de homepagina goed functioneert volgens de screenreader zal de workpagina ook goed werken aangezien ik deze op dezelfde manier zal coderen. Waar ik achter ben gekomen heb ik genoteerd bij bevindingen.
+
+  Op 26-09-2024 heb ik de WCAG checklist gedaan op mijn eigen site. De volgende bevindingen staan op de afbeeldingen.
+  <img src="https://github.com/user-attachments/assets/10ddcaa2-c3e2-4a00-9c77-90b3e3f4b4f3" alt="Foto van WCAG checklist" width="375px">
+  <img src="https://github.com/user-attachments/assets/115e879f-676e-4461-ab89-fa348b0e1fce" alt="Foto van WCAG checklist" width="375px">
+  <img src="https://github.com/user-attachments/assets/98ea2fe3-c524-4a10-b667-36248e5949d3" alt="Foto van WCAG checklist" width="375px">
+  <img src="https://github.com/user-attachments/assets/85d5ea83-2eb2-449b-8d8d-2c91da5c2858" alt="Foto van WCAG checklist" width="375px">
+  <img src="https://github.com/user-attachments/assets/003d5a32-3486-4e1c-ae59-13cc75121279" alt="Foto van WCAG checklist" width="375px">
+
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
@@ -240,7 +248,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Making semantischer:
   Making carousel pretty on bigger screen:
   making the awards card scale and have text left and pictures right:
-
+  Bevindingen toegankelijkheidstest verbeteren.
 
   ### Agenda voor meeting
   samen met je groepje opstellen
@@ -255,9 +263,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
   - Doe margin: 0; op de body aangezien die standaard ingesteld staat.
-  - punt 2
-  - nog een punt
-  - ...
+  - ../ om de font ook op live server te laten werken.
+  - div's zo veel mogelijk weghalen. Zelfde geldt voor de classes en id's als dit mogelijk is.
+
+Feedback van Jesse (student assistent):
+Je geeft zelf al aan dat je nog div's moet wegwerken. Je hebt een pause/play function aan laten staan van je video's en je geeft aan dat je dit vanwege toegankelijkheid hebt aangelaten. Voor je github pages site moet je nog even een "../" toevoegen voor al je images en fonts en alles is ook case sensitive, anders laad het niet in. Netjes responsive! We hebben verder eigenlijk echt geen feedback, want het ziet er vrijwel 1:1 uit met de originele website.
 
 </details>
 
