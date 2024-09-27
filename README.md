@@ -244,11 +244,20 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   Daarna wilde ik de underline weghalen. Dit heb ik gedaan door middel van wat aanpassingen in mijn css.
 
-  consistent scaling using clamp: 
-  Making semantischer:
-  Making carousel pretty on bigger screen:
-  making the awards card scale and have text left and pictures right:
-  Bevindingen toegankelijkheidstest verbeteren.
+  Ik wilde vervolgens gaan kijken hoe ik al mijn code van px naar zo veel mogelijk em ga krijgen. Toen ondervond ik dat de text steeds met responsiveness steeds dezelfde lettergrootte bleef. Hier zocht ik een oplossing voor. Dat als het scherm groter wordt dat de text mee scaled. Zo vond ik clamp. Met clamp kan je de minimale, preffered en maximale grootte aangeven om zo je text responsive te maken. Dit heb ik dan ook gebruikt. (de volgende link zit ook bij de bronvermelding.
+  https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+
+  Daarna dacht ik: Wat kan ik nog doen om mijn code er beter uit te laten zien. Aan mijn code te zien kon er zeker wat dingen semantischer. Ik ben namelijk uit mijzelf gewend om meteen een div te maken als ik onderdelen samen moet hebben om in mijn css te benoemen. Dit heb ik nu semantischer gemaakt door extra tags te gebruiken zoals aside en figure. Figure wordt voornamelijk gebruikt voor media bij elkaar brengen. Dat kan zowel afbeeldingen als video's zijn. En aside wordt gebruikt voor (zoals de benaming eigenlijk al zegt) een onderdeel van een section (bijvoorbeeld) wat niet de main content is. Ook heb ik zo veel mogelijk classes en id's weggehaald. Zo begon ik met ongeveer 40 classes en 10 id's. Nu heb ik dat naar beneden gehaald met 5 id's op de homepagina en 2 op de workpagina en 27 classes op de homepagina en 12 op de werkpagina. Ik had heb graag nog kleiner gemaakt, maar als ik in mijn css onderdelen wilde aanspreken met first-type of nth-type() dan werkte mijn hele code ineens niet meer op de server. Ik weet niet wat ik fout doe, maar voor nu laat ik het zo aangezien ik hier al best veel tijd aan kwijt ben geraakt.
+  Om de code nog semantischer te maken in mijn css heb ik de @media allemaal bij elkaar gezet om zo alle aanpassingen voor een groter scherm bij elkaar te hebben. Ook heb ik een aantal variabelen gemaakt om deze makkelijk te kunnen aanpassen voor de hele pagina als ik dit later nog zou willen. Ik wilde wellicht ook wat dingen aanpassen in de zin van meerdere code tegelijkertijd aanspreken om zo de code nog verder te verkleinen, maar hier heb ik geen tijd voor gehad. Dit zou ik echter wel doen als deze toepassingen van belang zijn.
+
+  Vervolgens ben ik aan de slag gegaan met het mooier maken van de carousel. Zo heb ik een aantal onderdelen weggehaald om de code te verkleinen zoals border-box (was eigenlijk onnodig). Ook heb ik de carousel bij het grotere scherm (@media 64em) in het midden gecentreerd. Zo ondanks dat het niet helemaal hetzelfde werkt als de daadwerkelijke website is het toch aantrekkelijk om naar te kijken. Deze keuze heb ik zo trouwens gemaakt omdat dit voor de screen reader makkelijker te lezen is en doorheen te scrollen is.
+
+  Dan had ik nog een volgende probleem. De awards card zag er niet uit. hij wilde niet goed meescalen als ik naar een groter scherm ging en de text kwam maar steeds niet naast links van de afbeeldingen. Na veel uitproberen is het mij toch gelukt. Zo heb ik nu toch flexbox gebruikt om de text links te krijgen, maar heb ik wel door middel van grid de onderdelen verdeeld. Ik wilde het eigenlijk helemaal met grid proberen te maken, maar voor onbepaalde reden is dat mij niet gelukt.
+
+  Bij de toegankelijkheidstest zijn een aantal dingen naar voren gekomen. Zoals dat de video's helemaal worden geskipt en niet eens worden voorgelezen. Nu heb ik voor de toegankelijkheid autoplay uitstaan en heb ik de controls aangezien voor betere toegankelijkheid. Nu herkent hij de video wel en geeft hij ook de extra text mee bij het benoemen van de video. Ook kwam uit de text dat de navigatie wel benoemd wordt, maar niet te zien is op het scherm. Dit ga ik niet aanpassen aangezien ik ten eerste niet weet hoe en ten tweede de hele navigatie bestaat uit een micro interactie waar ik al heel veel tijd aan heb besteed om uberhaüpt werkende te krijgen. Ook kan je in een geheel niet makkelijk voorbij de industries. Ik ben erachter waarom niet en dat ligt aan mij zelf. Ik ging namelijk letter voor letter ervoorbij. Toen ik het nog een keer probeerde met de goeie controls kon ik dit wel makkelijk skippen. Dit komt deels door de classes die ik hiervoor heb aangemaakt, waarbij je makkelijk het hele stuk voorbij kan als je dat zou willen. Als laatste ondervond ik dat de links van de sociale media niet werden opgenoemd. Dit komt omdat je geen alt text op een svg mag doen. Wel kan je de title property gebruiken om dit op de list item aan te geven. Dit heb ik dan ook gedaan en heeft het probleem opgelost.
+
+  Als laatste ben ik nog met de W3C check eroverheen gegaan. De foutmeldingen heb ik allemaal weggewerkt en alle tips met slashes heb ik niet weggehaald aangezien dit met de formatting steeds gebeurd.
+  
 
   ### Agenda voor meeting
   samen met je groepje opstellen
@@ -310,12 +319,14 @@ Je geeft zelf al aan dat je nog div's moet wegwerken. Je hebt een pause/play fun
   Nb. Vermeld de bronnen ook in je code.
 
   1. De website die ik na maak.
-  https://moreair.co/
+     https://moreair.co/
   2. Wat kan je i.p.v. alt bij een image gebruiken voor bij een video?
-  https://discuss.codecademy.com/t/can-we-use-an-alt-attribute-with-the-video-tag/300322/4
+     https://discuss.codecademy.com/t/can-we-use-an-alt-attribute-with-the-video-tag/300322/4
   3. Video automatisch af laten spelen.
      https://www.w3schools.com/tags/att_video_autoplay.asp
   4. Informatie over mix-blend-mode
      https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode
+  5. Informatie over clamp
+     https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
 
 </details>
