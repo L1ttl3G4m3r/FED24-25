@@ -86,14 +86,16 @@ button {
 /* LOGO STYLING */
 /****************/
 header > nav > a {
+  display: inline-block;
   position: fixed;
+
   top: 1em;
   left: 1em;
+  width: 6em;
+
   z-index: 1001; /* For logo above the nav */
-  display: inline-block;
   mix-blend-mode: difference;
   filter: invert();
-  width: 6em;
 }
 
 
@@ -101,24 +103,28 @@ header > nav > a {
 /* HAMBURGER MENU */
 /******************/
 label {
-  position: fixed;
-  top: 1em;
-  right: 1em;
-  z-index: 1000; /* For icons nav */
-  cursor: pointer;
-  width: 3em;
-  height: 3em;
   display: flex;
+  position: fixed;
   align-items: center;
   justify-content: center;
+
+  top: 1em;
+  right: 1em;
+  width: 3em;
+  height: 3em;
+
+  z-index: 1000; /* For icons nav */
+  cursor: pointer;
 }
 
 label svg {
+  position: absolute;
+
   width: 2em;
   height: 2em;
+
   fill: none;
   stroke: var(--color-text);
-  position: absolute;
 }
 
 .unchecked {
@@ -151,17 +157,20 @@ input:checked + label .checked {
 /* MENU STYLING */
 /****************/
 nav ul {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr); /* Allow three rows for links */
   position: fixed;
+  overflow: hidden;
+
   top: 0;
   left: 0;
   width: var(--width);
   height: 0; /* Set back to 0 for animation */
+
   background-color: var(--color-text);
-  overflow: hidden;
+
   z-index: 999; /* So that videos won't go over the nav */
   transition: 0.3s ease-in-out;
-  display: grid;
-  grid-template-rows: repeat(5, 1fr); /* Allow three rows for links */
 }
 
 #nav1 {
@@ -186,8 +195,10 @@ nav ul li {
 
 nav ul a {
   top: 1em;
+
   color: var(--color-background);
   text-decoration: none; /* Ensure no underline */
+
   opacity: 0; /* Start hidden for animation */
 }
 
@@ -205,18 +216,20 @@ input:checked + label + ul a {
 /* HOVER EFFECT WITH WHITE LINE UNDER LINK */
 /*******************************************/
 nav ul a {
-  position: relative;
   display: inline-block;
+  position: relative;
 }
 
 nav ul a::after {
   content: ""; /* To have space for the underline */
   position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-background);
+
   bottom: 0;
   left: 0;
+  width: 0;
+  height: 2px;
+
+  background-color: var(--color-background);
 }
 
 nav ul li a:hover::after {
@@ -252,9 +265,9 @@ main header {
 
 main header button,
 main button {
+  display: grid;
   background-color: var(--color-background);
   border: none;
-  display: grid;
 }
 
 
@@ -278,11 +291,12 @@ video:first-child {
 /* GRID LAYOUT */
 /***************/
 article {
-  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   gap: var(--gap-small);
   max-width: var(--width);
+
+  background-color: var(--color-background);
 }
 
 
@@ -296,9 +310,9 @@ article {
 }
 
 .left-content {
-  max-width: 60%;
   display: flex;
   flex-direction: column;
+  max-width: 60%;
 }
 
 section aside {
@@ -313,8 +327,9 @@ section aside {
 /****************/
 .industries ol {
   padding: 0;
-  list-style-type: none;
   text-align: center;
+
+  list-style-type: none;
 }
 
 /**************************/
@@ -331,9 +346,9 @@ section aside {
 }
 
 .brands-logos img {
+  display: block;
   width: var(--width);
   height: auto;
-  display: block;
 }
 
 
@@ -349,30 +364,31 @@ section aside {
 
 .carousel-list {
   display: flex; /* For horizontal layout */
-  transition: 0.5s ease; /* Smooth transition for sliding */
-  display: flex;
-  padding: 0;
   list-style: none; /* Remove list bullets */
   width: var(--width); /* Ensure ul takes full width */
+  padding: 0;
+  transition: 0.5s ease; /* Smooth transition for sliding */
 }
 
 .carousel-list li {
-  flex: 0 0 100%; /* Each item takes full width of the carousel view by default */
-  padding: var(--padding); /* So that the buttons don't overlap the text */
-  overflow: hidden;
   display: flex;
+  overflow: hidden;
+  flex: 0 0 100%; /* Each item takes full width of the carousel view by default */
   flex-direction: column;
+  padding: var(--padding); /* So that the buttons don't overlap the text */
 }
 
 /* The buttons */
 .carousel-nav {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
+
   font-size: 2em;
   color: var(--color-text);
+  
   padding: 0 1em;
+  transform: translateY(-50%);
+  cursor: pointer;
   z-index: 100; /* Ensure nav buttons are above the content */
 }
 
@@ -407,14 +423,16 @@ section aside {
 }
 
 .awards-card {
-  background-color: var(--color-text); /* Black background */
-  color: var(--color-background); /* White text */
-  border-radius: var(--border-radius);
-  padding: var(--padding);
-  width: var(--width);
   display: grid;
   grid-template-columns: 1fr; /* Stack header and paragraph vertically by default */
   gap: var(--gap-small);
+  width: var(--width);
+
+  background-color: var(--color-text); /* Black background */
+  color: var(--color-background); /* White text */
+
+  border-radius: var(--border-radius);
+  padding: var(--padding);
 }
 
 .awards-text {
@@ -472,17 +490,20 @@ ol li p {
 
 /* Button styling */
 .container-button > button {
-  height: 4em;
-  border-radius: 2em;
-  padding-left: var(--padding);
-  padding-right: var(--padding);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--gap-small);
-  border: solid var(--color-text);
+  height: 4em;
+
   background-color: var(--color-text);
   color: var(--color-background);
+
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  border: solid var(--color-text);
+  border-radius: 2em;
+
   cursor: pointer;
 }
 
@@ -513,19 +534,21 @@ section {
 
 /* Styles for the list items */
 .team-list li {
-  background-color: white;
-  border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
+
+  background-color: white;
   font-size: 1em;
+  border-radius: var(--border-radius);
+
   padding: var(--padding);
 }
 
 .team-list li p,
 .team-list li a {
+  color: var(--color-text);
   font-size: 1.5em;
   padding: var(--padding);
-  color: var(--color-text);
 }
 
 /* Style for images or GIFs */
@@ -629,12 +652,12 @@ video:not(:first-child),
 
   article h3,
   article p {
-    grid-area: text;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    grid-area: text;
   }
 
   .p-belowtext {
@@ -693,8 +716,8 @@ video:not(:first-child),
   
   .carousel-list li {
     flex: 0 0 20%; /* Set a specific width for each carousel item */
-    margin: 0 1.5%; /* Add margin to space out cards */
     justify-content: center;
+    margin: 0 1.5%; /* Add margin to space out cards */
   }
 
   .carousel-list p {
